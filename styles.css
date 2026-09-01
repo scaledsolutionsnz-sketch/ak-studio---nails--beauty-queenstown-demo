@@ -132,11 +132,11 @@ p{margin:0}
 /* ---------- nav ---------- */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  padding:16px 0;
-  transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);
+  padding:13px 0;
+  transition:background .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);
   border-bottom:1px solid transparent;
 }
-.nav.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line-soft);padding:10px 0;box-shadow:0 10px 34px -30px rgba(16,12,14,.8)}
+.nav.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line-soft);box-shadow:0 10px 34px -30px rgba(16,12,14,.8)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{display:flex;flex-direction:column;text-decoration:none;line-height:1.1}
 .brand-name{font-family:'Bodoni Moda',serif;font-size:21px;letter-spacing:.15em;color:#fff;transition:color .4s var(--ease)}
@@ -149,8 +149,8 @@ p{margin:0}
   text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.86);
   position:relative;padding:6px 0;transition:color .3s var(--ease);
 }
-.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--accent);transition:width .35s var(--ease)}
-.nav-links a:hover::after{width:100%}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1)}
 .nav.solid .nav-links a{color:var(--text)}
 .nav-cta{
   display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:11px 20px;border-radius:999px;
@@ -285,8 +285,7 @@ p{margin:0}
 .avatar{
   width:96px;height:96px;border-radius:50%;background:var(--ink-3);
   border:1px solid var(--accent);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Bodoni Moda',serif;font-size:32px;color:#E7C3C8;letter-spacing:.06em;
+  object-fit:cover;object-position:center 20%;
   box-shadow:0 0 0 7px rgba(183,110,121,.12);
 }
 .tech-card h3{font-size:32px;color:#fff}
